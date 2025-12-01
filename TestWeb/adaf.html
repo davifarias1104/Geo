@@ -1,33 +1,50 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
-
-  <!-- Flickity CSS -->
-  <link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css">
-
-  <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carousel Website</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <!-- Carousel Section -->
+    <div class="carousel-container">
+        <div class="carousel">
+            <div class="carousel-slide active">
+                <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-6JOVdJcOrcOZOwbgmBFcXGwZrCWJoc.png" alt="Landscape">
+            </div>
+            <div class="carousel-slide">
+                <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-PD1RlEcHTkHZUf2Y1HnyCv7W0eB7YG.png" alt="Architecture">
+            </div>
+            <div class="carousel-slide">
+                <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-YoFNlQjuoQwCxTCDR44hj44yOiH0uS.png" alt="Nature">
+            </div>
+            <div class="carousel-slide">
+                <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-PUiGmkK0gGN56mjFYRUYcXQ77xeAUx.png" alt="Urban">
+            </div>
+        </div>
 
-  <h1>CSS carousel single item per page</h1>
-  <ul>
-    <li>
-      <h2>Page 1</h2>
-    </li>
-    <li>
-      <h2>Page 2</h2>
-    </li>
-    <li>
-      <h2>Page 3</h2>
-    </li>
-    <li>
-      <h2>Page 4</h2>
-    </li>
-  </ul>
+        <!-- Navigation Buttons -->
+        <button class="carousel-btn prev" onclick="changeSlide(-1)">❮</button>
+        <button class="carousel-btn next" onclick="changeSlide(1)">❯</button>
 
-  <script src="Script.js"></script>
+        <!-- Dots Indicator -->
+        <div class="carousel-dots">
+            <span class="dot active" onclick="goToSlide(0)"></span>
+            <span class="dot" onclick="goToSlide(1)"></span>
+            <span class="dot" onclick="goToSlide(2)"></span>
+            <span class="dot" onclick="goToSlide(3)"></span>
+        </div>
+    </div>
+
+    <!-- Dynamic Content Section -->
+    <div class="content-section">
+        <h1 id="main-heading" class="content-heading">Discover Amazing Adventures</h1>
+        <p id="main-description" class="content-description">
+            Explore breathtaking landscapes and embark on unforgettable journeys around the world
+        </p>
+    </div>
+
+    <script src="cript.js"></script>
 </body>
 </html>

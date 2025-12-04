@@ -1,32 +1,34 @@
-// Carousel Configuration
 let currentSlide = 0;
-let autoPlayInterval;
-const AUTO_PLAY_DELAY = 5000; // 5 seconds
 
-// Content data for each slide
 const slideContent = [
     {
-        heading: "Discover Amazing Adventures",
-        description: "Explore breathtaking landscapes and embark on unforgettable journeys around the world"
+        heading: "Cidade Verde",
+        description: "Esse jogo possui 4 modos (transporte saudável, poupando energia, reciclando em casa e poupando água), cada um com uma jogabilidade diferente envolvendo movimentação pelo teclado, cliques do mouse e microações variadas. Cada modo apresenta uma demonstração antes de começar para explicar o objetivo que deve ser realizado dentro de um limite de tempo.",
+        environmental: "O tema é explorado por meio de ações individuais como economia de água e energia, mostrando como pequenos hábitos ajudam a reduzir impactos ambientais. Ao final de cada modo, o jogo apresenta uma explicação sobre como aquela ação beneficia o meio ambiente.",
+        link: "https://www.atividadeseducativas.com.br/index.php?id=5361"
     },
     {
-        heading: "Modern Innovation & Design",
-        description: "Experience cutting-edge architecture and contemporary design that shapes our future"
+        heading: "Imagine Earth",
+        description: "Uma simulação de planeta em tempo real onde o jogador atua como gerente de colônias espaciais. É necessário explorar e povoar planetas distantes, equilibrando metas de lucro com preservação ambiental e condições de vida.",
+        environmental: "O jogo demonstra os desafios de um desenvolvimento econômico sustentável e evidencia as vantagens de seguir esse caminho. Faz bom uso das mecânicas para ensinar sobre equilíbrio ecológico e gestão responsável."
     },
     {
-        heading: "Nature's Tranquil Beauty",
-        description: "Find peace and serenity in the unspoiled wonders of the natural world"
+        heading: "Alba: A Wildlife Adventure",
+        description: "A personagem Alba tenta preservar o ecossistema de uma ilha mediterrânea, ajudando animais e reunindo voluntários. O jogador explora um ambiente 3D para solucionar problemas ambientais e transformar o local em um paraíso ecológico.",
+        environmental: "O jogo valoriza o meio ambiente pela sua beleza e transmite a mensagem de que qualquer pessoa pode fazer a diferença. Ele reforça que mudar hábitos e ajudar a comunidade são atitudes poderosas."
     },
     {
-        heading: "Urban Energy & Culture",
-        description: "Immerse yourself in the vibrant pulse and dynamic spirit of city life"
+        heading: "Terra Nil",
+        description: "Um jogo de estratégia sobre transformar terras inférteis em ecossistemas equilibrados. O jogador deve purificar o solo, restaurar nascentes e depois remover qualquer vestígio de intervenção humana. A geração procedural cria paisagens únicas a cada partida.",
+        environmental: "O foco é completamente voltado à restauração ambiental, mostrando a importância da revitalização de rios, resurgimento de nascentes e recuperação de solos."
+    },
+    {
+        heading: ""
     }
 ];
 
-// Initialize carousel on page load
 document.addEventListener('DOMContentLoaded', function() {
     showSlide(currentSlide);
-    startAutoPlay();
 });
 
 // Show specific slide
@@ -58,60 +60,46 @@ function showSlide(index) {
 // Change slide (next/previous)
 function changeSlide(direction) {
     showSlide(currentSlide + direction);
-    resetAutoPlay();
 }
 
 // Go to specific slide
 function goToSlide(index) {
     showSlide(index);
-    resetAutoPlay();
 }
 
 // Update content based on current slide
 function updateContent(index) {
     const heading = document.getElementById('main-heading');
     const description = document.getElementById('main-description');
+    const gameTitle = document.getElementById('game-title');
+    const gameDesc = document.getElementById('game-description');
+    const gameEnv = document.getElementById('game-environmental');
     const content = slideContent[index];
     
     // Add fade-in animation class
     heading.classList.remove('fade-in');
     description.classList.remove('fade-in');
+    if (gameTitle) gameTitle.classList.remove('fade-in');
+    if (gameDesc) gameDesc.classList.remove('fade-in');
+    if (gameEnv) gameEnv.classList.remove('fade-in');
     
     // Force reflow to restart animation
     void heading.offsetWidth;
     
     // Update text content
     heading.textContent = content.heading;
-    description.textContent = content.description;
+    description.textContent = "Explore esse jogo Ambiental";
+    
+    if (gameTitle) gameTitle.textContent = content.heading;
+    if (gameDesc) gameDesc.textContent = content.description;
+    if (gameEnv) gameEnv.textContent = content.environmental;
     
     // Add animation class
     heading.classList.add('fade-in');
     description.classList.add('fade-in');
-}
-
-// Auto play functionality
-function startAutoPlay() {
-    autoPlayInterval = setInterval(function() {
-        showSlide(currentSlide + 1);
-    }, AUTO_PLAY_DELAY);
-}
-
-// Reset auto play (when user manually navigates)
-function resetAutoPlay() {
-    clearInterval(autoPlayInterval);
-    startAutoPlay();
-}
-
-// Pause auto play on hover
-const carouselContainer = document.querySelector('.carousel-container');
-if (carouselContainer) {
-    carouselContainer.addEventListener('mouseenter', function() {
-        clearInterval(autoPlayInterval);
-    });
-    
-    carouselContainer.addEventListener('mouseleave', function() {
-        startAutoPlay();
-    });
+    if (gameTitle) gameTitle.classList.add('fade-in');
+    if (gameDesc) gameDesc.classList.add('fade-in');
+    if (gameEnv) gameEnv.classList.add('fade-in');
 }
 
 // Keyboard navigation

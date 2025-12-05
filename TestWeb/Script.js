@@ -23,7 +23,8 @@ const slideContent = [
         heading: "Terra Nil",
         description: "Um jogo de estratégia sobre transformar terras inférteis em ecossistemas equilibrados. O jogador deve purificar o solo, restaurar nascentes e depois remover qualquer vestígio de intervenção humana. A geração procedural cria paisagens únicas a cada partida.",
         environmental: "O foco é completamente voltado à restauração ambiental, mostrando a importância da revitalização de rios, resurgimento de nascentes e recuperação de solos.",
-        link: "https://www.atividadeseducativas.com.br/index.php?id=5361"
+        trailer: "https://www.youtube.com/watch?v=F8eYqNNxICE",
+        link: "https://store.steampowered.com/app/1593030/Terra_Nil/"
     },
     {
         heading: ""

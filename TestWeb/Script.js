@@ -1,38 +1,60 @@
+// Carousel Configuration
 let currentSlide = 0;
+let autoPlayInterval;
+const AUTO_PLAY_DELAY = 5000; // 5 seconds
 
-const slideContent = [
+// Game data for each slide
+const gameData = [
     {
-        heading: "Cidade Verde",
-        description: "Esse jogo possui 4 modos (transporte saudável, poupando energia, reciclando em casa e poupando água), cada um com uma jogabilidade diferente envolvendo movimentação pelo teclado, cliques do mouse e microações variadas. Cada modo apresenta uma demonstração antes de começar para explicar o objetivo que deve ser realizado dentro de um limite de tempo.",
-        environmental: "O tema é explorado por meio de ações individuais como economia de água e energia, mostrando como pequenos hábitos ajudam a reduzir impactos ambientais. Ao final de cada modo, o jogo apresenta uma explicação sobre como aquela ação beneficia o meio ambiente.",
-        link: "https://www.atividadeseducativas.com.br/index.php?id=5361"
+        title: "Minecraft",
+        rating: "9.5",
+        description: "Build, explore, and survive in an infinite procedurally generated world. Craft tools, build shelters, and create anything you can imagine in this iconic sandbox adventure.",
+        price: "$26.95",
+        downloads: "300M+",
+        genre: "Sandbox",
+        playtime: "200+ hrs",
+        trailer: "https://www.youtube.com/watch?v=MmB9b5njVbA",
+        tags: ["Multiplayer", "Creative", "Survival", "Open World"]
     },
     {
-        heading: "Imagine Earth",
-        description: "Uma simulação de planeta em tempo real onde o jogador atua como gerente de colônias espaciais. É necessário explorar e povoar planetas distantes, equilibrando metas de lucro com preservação ambiental e condições de vida.",
-        environmental: "O jogo demonstra os desafios de um desenvolvimento econômico sustentável e evidencia as vantagens de seguir esse caminho. Faz bom uso das mecânicas para ensinar sobre equilíbrio ecológico e gestão responsável.",
-        link: "https://www.atividadeseducativas.com.br/index.php?id=5361"
+        title: "The Witcher 3",
+        rating: "9.8",
+        description: "Embark on an epic open-world adventure as Geralt of Rivia. Hunt monsters, make impactful choices, and experience one of the most acclaimed RPGs of all time.",
+        price: "$39.99",
+        downloads: "50M+",
+        genre: "RPG",
+        playtime: "150+ hrs",
+        trailer: "https://www.youtube.com/watch?v=c0i88t0Kacs",
+        tags: ["Story Rich", "Open World", "Fantasy", "Action"]
     },
     {
-        heading: "Alba: A Wildlife Adventure",
-        description: "A personagem Alba tenta preservar o ecossistema de uma ilha mediterrânea, ajudando animais e reunindo voluntários. O jogador explora um ambiente 3D para solucionar problemas ambientais e transformar o local em um paraíso ecológico.",
-        environmental: "O jogo valoriza o meio ambiente pela sua beleza e transmite a mensagem de que qualquer pessoa pode fazer a diferença. Ele reforça que mudar hábitos e ajudar a comunidade são atitudes poderosas.",
-        link: "https://www.atividadeseducativas.com.br/index.php?id=5361"
+        title: "Stardew Valley",
+        rating: "9.3",
+        description: "Escape to the countryside and build the farm of your dreams. Grow crops, raise animals, go fishing, mine for ores, and become part of the local community.",
+        price: "$14.99",
+        downloads: "20M+",
+        genre: "Farming Sim",
+        playtime: "120+ hrs",
+        trailer: "https://www.youtube.com/watch?v=ot7uXNQskhs",
+        tags: ["Farming", "Relaxing", "Indie", "Multiplayer"]
     },
     {
-        heading: "Terra Nil",
-        description: "Um jogo de estratégia sobre transformar terras inférteis em ecossistemas equilibrados. O jogador deve purificar o solo, restaurar nascentes e depois remover qualquer vestígio de intervenção humana. A geração procedural cria paisagens únicas a cada partida.",
-        environmental: "O foco é completamente voltado à restauração ambiental, mostrando a importância da revitalização de rios, resurgimento de nascentes e recuperação de solos.",
-        trailer: "https://www.youtube.com/watch?v=F8eYqNNxICE",
-        link: "https://store.steampowered.com/app/1593030/Terra_Nil/"
-    },
-    {
-        heading: ""
+        title: "Cyberpunk 2077",
+        rating: "8.5",
+        description: "Experience the future in Night City, an open-world metropolis obsessed with power, glamour, and body modification. Become a cyberpunk and write your own story.",
+        price: "$59.99",
+        downloads: "25M+",
+        genre: "Action RPG",
+        playtime: "100+ hrs",
+        trailer: "https://www.youtube.com/watch?v=8X2kIfS6fb8",
+        tags: ["Cyberpunk", "Open World", "FPS", "Story Rich"]
     }
 ];
 
+// Initialize carousel on page load
 document.addEventListener('DOMContentLoaded', function() {
     showSlide(currentSlide);
+    startAutoPlay();
 });
 
 // Show specific slide
@@ -57,53 +79,89 @@ function showSlide(index) {
     slides[currentSlide].classList.add('active');
     dots[currentSlide].classList.add('active');
     
-    // Update content
-    updateContent(currentSlide);
+    // Update game content
+    updateGameContent(currentSlide);
 }
 
 // Change slide (next/previous)
 function changeSlide(direction) {
     showSlide(currentSlide + direction);
+    resetAutoPlay();
 }
 
 // Go to specific slide
 function goToSlide(index) {
     showSlide(index);
+    resetAutoPlay();
 }
 
-// Update content based on current slide
-function updateContent(index) {
-    const heading = document.getElementById('main-heading');
-    const description = document.getElementById('main-description');
-    const gameTitle = document.getElementById('game-title');
-    const gameDesc = document.getElementById('game-description');
-    const gameEnv = document.getElementById('game-environmental');
-    const content = slideContent[index];
+// Update game content based on current slide
+function updateGameContent(index) {
+    const game = gameData[index];
     
-    // Add fade-in animation class
-    heading.classList.remove('fade-in');
-    description.classList.remove('fade-in');
-    if (gameTitle) gameTitle.classList.remove('fade-in');
-    if (gameDesc) gameDesc.classList.remove('fade-in');
-    if (gameEnv) gameEnv.classList.remove('fade-in');
+    // Get all elements
+    const title = document.getElementById('game-title');
+    const rating = document.getElementById('rating');
+    const description = document.getElementById('game-description');
+    const price = document.getElementById('price');
+    const downloads = document.getElementById('downloads');
+    const genre = document.getElementById('genre');
+    const playtime = document.getElementById('playtime');
+    const trailerLink = document.getElementById('trailer-link');
+    const tagsContainer = document.getElementById('game-tags');
     
-    // Force reflow to restart animation
-    void heading.offsetWidth;
+    // Add fade-out effect
+    const contentSection = document.querySelector('.content-section');
+    contentSection.style.opacity = '0';
     
-    // Update text content
-    heading.textContent = content.heading;
-    description.textContent = "Explore esse jogo Ambiental";
+    // Update content after brief delay
+    setTimeout(() => {
+        title.textContent = game.title;
+        rating.textContent = game.rating;
+        description.textContent = game.description;
+        price.textContent = game.price;
+        downloads.textContent = game.downloads;
+        genre.textContent = game.genre;
+        playtime.textContent = game.playtime;
+        trailerLink.href = game.trailer;
+        
+        // Update tags
+        tagsContainer.innerHTML = '';
+        game.tags.forEach(tag => {
+            const tagElement = document.createElement('span');
+            tagElement.className = 'tag';
+            tagElement.textContent = tag;
+            tagsContainer.appendChild(tagElement);
+        });
+        
+        // Fade back in
+        contentSection.style.opacity = '1';
+    }, 300);
+}
+
+// Auto play functionality
+function startAutoPlay() {
+    autoPlayInterval = setInterval(function() {
+        showSlide(currentSlide + 1);
+    }, AUTO_PLAY_DELAY);
+}
+
+// Reset auto play (when user manually navigates)
+function resetAutoPlay() {
+    clearInterval(autoPlayInterval);
+    startAutoPlay();
+}
+
+// Pause auto play on hover
+const carouselContainer = document.querySelector('.carousel-container');
+if (carouselContainer) {
+    carouselContainer.addEventListener('mouseenter', function() {
+        clearInterval(autoPlayInterval);
+    });
     
-    if (gameTitle) gameTitle.textContent = content.heading;
-    if (gameDesc) gameDesc.textContent = content.description;
-    if (gameEnv) gameEnv.textContent = content.environmental;
-    
-    // Add animation class
-    heading.classList.add('fade-in');
-    description.classList.add('fade-in');
-    if (gameTitle) gameTitle.classList.add('fade-in');
-    if (gameDesc) gameDesc.classList.add('fade-in');
-    if (gameEnv) gameEnv.classList.add('fade-in');
+    carouselContainer.addEventListener('mouseleave', function() {
+        startAutoPlay();
+    });
 }
 
 // Keyboard navigation

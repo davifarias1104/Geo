@@ -3,75 +3,93 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Explorar</title>
+    <title>Game Showcase</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <!-- Carousel Section -->
     <div class="carousel-container">
         <div class="carousel">
             <div class="carousel-slide active">
-                <img src="WhatsApp Image 2025-11-29 at 20.31.54 (1) (4) (1).png">
+                <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-6JOVdJcOrcOZOwbgmBFcXGwZrCWJoc.png" alt="Landscape">
             </div>
             <div class="carousel-slide">
-                <img src="header2 (1).jpg">
+                <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-PD1RlEcHTkHZUf2Y1HnyCv7W0eB7YG.png" alt="Architecture">
             </div>
             <div class="carousel-slide">
-                <img src="header4 (1) (1).jpg">
+                <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-YoFNlQjuoQwCxTCDR44hj44yOiH0uS.png" alt="Nature">
             </div>
             <div class="carousel-slide">
-                <img src="header (1).png">
-            </div>
-            <div class="carousel-slide">
-                <img src="header3 (2).jpg">
+                <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-PUiGmkK0gGN56mjFYRUYcXQ77xeAUx.png" alt="Urban">
             </div>
         </div>
 
+        <!-- Navigation Buttons -->
         <button class="carousel-btn prev" onclick="changeSlide(-1)">❮</button>
         <button class="carousel-btn next" onclick="changeSlide(1)">❯</button>
 
+        <!-- Dots Indicator -->
         <div class="carousel-dots">
             <span class="dot active" onclick="goToSlide(0)"></span>
             <span class="dot" onclick="goToSlide(1)"></span>
             <span class="dot" onclick="goToSlide(2)"></span>
             <span class="dot" onclick="goToSlide(3)"></span>
-            <span class="dot" onclick="goToSlide(4)"></span>
         </div>
     </div>
 
+    <!-- Dynamic Game Content Section -->
     <div class="content-section">
-        <h1 id="main-heading" class="content-heading">Carregando...</h1>
-        <p id="main-description" class="content-description">Carregando...</p>
-        <div class="content-details">
-            <p id="game-description">Carregando...</p>
+        <div class="game-header">
+            <h1 id="game-title" class="game-title">Minecraft</h1>
+            <div class="rating-badge" id="rating-badge">
+                <span class="star">★</span>
+                <span id="rating">9.5</span>
+            </div>
+        </div>
 
-            <p class="section-title">Como aborda a questão ambiental?</p>
-            <p id="game-environmental">Carregando...</p>
+        <p id="game-description" class="game-description">
+            Build, explore, and survive in an infinite procedurally generated world. Craft tools, build shelters, and create anything you can imagine in this iconic sandbox adventure.
+        </p>
 
-            <p class="section-title">Avaliação dos Jogadores</p>
-            <p id="game-rating">Carregando...</p>
+        <div class="game-stats-grid">
+            <div class="stat-card">
+                <div class="stat-icon">💰</div>
+                <div class="stat-label">Price</div>
+                <div class="stat-value" id="price">$26.95</div>
+            </div>
 
-            <p class="section-title">Preço</p>
-            <p id="game-price">Carregando...</p>
+            <div class="stat-card">
+                <div class="stat-icon">📥</div>
+                <div class="stat-label">Downloads</div>
+                <div class="stat-value" id="downloads">300M+</div>
+            </div>
 
-            <p class="section-title">Downloads</p>
-            <p id="game-downloads">Carregando...</p>
+            <div class="stat-card">
+                <div class="stat-icon">🎮</div>
+                <div class="stat-label">Genre</div>
+                <div class="stat-value" id="genre">Sandbox</div>
+            </div>
 
-            <p class="section-title">Trailer</p>
-            <div id="game-trailer"></div>
+            <div class="stat-card">
+                <div class="stat-icon">⏱️</div>
+                <div class="stat-label">Avg Playtime</div>
+                <div class="stat-value" id="playtime">200+ hrs</div>
+            </div>
+        </div>
 
-            <button id="game-steam-btn" class="game-btn">Página</button>
+        <div class="game-actions">
+            <a href="#" id="trailer-link" class="btn btn-primary">🎬 Watch Trailer</a>
+            <button class="btn btn-secondary">🛒 Buy Now</button>
+        </div>
+
+        <div class="game-tags" id="game-tags">
+            <span class="tag">Multiplayer</span>
+            <span class="tag">Creative</span>
+            <span class="tag">Survival</span>
+            <span class="tag">Open World</span>
         </div>
     </div>
 
-    <p class="section-title">Plataformas Disponíveis</p>
-<p id="game-platforms">Carregando...</p>
-
-<p class="section-title">Gênero</p>
-<p id="game-genre">Carregando...</p>
-
-<p class="section-title">Tempo Médio de Jogo</p>
-<p id="game-playtime">Carregando...</p>
-
-<script src="Script.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>

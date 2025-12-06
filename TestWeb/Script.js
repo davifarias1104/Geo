@@ -1,7 +1,5 @@
 // Carousel Configuration
 let currentSlide = 0;
-let autoPlayInterval;
-const AUTO_PLAY_DELAY = 5000; // 5 seconds
 
 // Game data for each slide
 const gameData = [
@@ -54,7 +52,6 @@ const gameData = [
 // Initialize carousel on page load
 document.addEventListener('DOMContentLoaded', function() {
     showSlide(currentSlide);
-    startAutoPlay();
 });
 
 // Show specific slide
@@ -86,13 +83,11 @@ function showSlide(index) {
 // Change slide (next/previous)
 function changeSlide(direction) {
     showSlide(currentSlide + direction);
-    resetAutoPlay();
 }
 
 // Go to specific slide
 function goToSlide(index) {
     showSlide(index);
-    resetAutoPlay();
 }
 
 // Update game content based on current slide
@@ -137,31 +132,6 @@ function updateGameContent(index) {
         // Fade back in
         contentSection.style.opacity = '1';
     }, 300);
-}
-
-// Auto play functionality
-function startAutoPlay() {
-    autoPlayInterval = setInterval(function() {
-        showSlide(currentSlide + 1);
-    }, AUTO_PLAY_DELAY);
-}
-
-// Reset auto play (when user manually navigates)
-function resetAutoPlay() {
-    clearInterval(autoPlayInterval);
-    startAutoPlay();
-}
-
-// Pause auto play on hover
-const carouselContainer = document.querySelector('.carousel-container');
-if (carouselContainer) {
-    carouselContainer.addEventListener('mouseenter', function() {
-        clearInterval(autoPlayInterval);
-    });
-    
-    carouselContainer.addEventListener('mouseleave', function() {
-        startAutoPlay();
-    });
 }
 
 // Keyboard navigation

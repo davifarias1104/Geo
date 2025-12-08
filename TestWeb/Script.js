@@ -4,48 +4,39 @@ let currentSlide = 0;
 // Game data for each slide
 const gameData = [
     {
-        title: "Minecraft",
-        rating: "9.5",
-        description: "Build, explore, and survive in an infinite procedurally generated world. Craft tools, build shelters, and create anything you can imagine in this iconic sandbox adventure.",
-        price: "$26.95",
-        downloads: "300M+",
-        genre: "Sandbox",
-        playtime: "200+ hrs",
+        title: "Cidade Verde",
+        rating: "Test",
+        description: "Esse jogo possui 4 modos (transporte saudável, poupando energia, reciclando em casa e poupando água), cada um com uma jogabilidade diferente envolvendo movimentação pelo teclado, cliques do mouse e microações variadas. Cada modo apresenta uma demonstração antes de começar para explicar o objetivo que deve ser realizado dentro de um limite de tempo.",
+        environmental: "O tema é explorado por meio de ações individuais como economia de água e energia, mostrando como pequenos hábitos ajudam a reduzir impactos ambientais. Ao final de cada modo, o jogo apresenta uma explicação sobre como aquela ação beneficia o meio ambiente.",
+        price: "Test",
+        downloads: "Test",
+        genre: "Test",
+        playtime: "Test",
         trailer: "https://www.youtube.com/watch?v=MmB9b5njVbA",
-        tags: ["Multiplayer", "Creative", "Survival", "Open World"]
+        link: "https://www.atividadeseducativas.com.br/index.php?id=5361",
+        tags: ["Test", "Test", "Test", "Test"]
     },
     {
-        title: "The Witcher 3",
-        rating: "9.8",
-        description: "Embark on an epic open-world adventure as Geralt of Rivia. Hunt monsters, make impactful choices, and experience one of the most acclaimed RPGs of all time.",
-        price: "$39.99",
-        downloads: "50M+",
-        genre: "RPG",
-        playtime: "150+ hrs",
-        trailer: "https://www.youtube.com/watch?v=c0i88t0Kacs",
-        tags: ["Story Rich", "Open World", "Fantasy", "Action"]
+        title: "Imagine Earth",
+        description: "Uma simulação de planeta em tempo real onde o jogador atua como gerente de colônias espaciais. É necessário explorar e povoar planetas distantes, equilibrando metas de lucro com preservação ambiental e condições de vida.",
+        environmental: "O jogo demonstra os desafios de um desenvolvimento econômico sustentável e evidencia as vantagens de seguir esse caminho. Faz bom uso das mecânicas para ensinar sobre equilíbrio ecológico e gestão responsável.",
+        link: "https://www.atividadeseducativas.com.br/index.php?id=5361"
     },
     {
-        title: "Stardew Valley",
-        rating: "9.3",
-        description: "Escape to the countryside and build the farm of your dreams. Grow crops, raise animals, go fishing, mine for ores, and become part of the local community.",
-        price: "$14.99",
-        downloads: "20M+",
-        genre: "Farming Sim",
-        playtime: "120+ hrs",
-        trailer: "https://www.youtube.com/watch?v=ot7uXNQskhs",
-        tags: ["Farming", "Relaxing", "Indie", "Multiplayer"]
+        title: "Alba: A Wildlife Adventure",
+        description: "A personagem Alba tenta preservar o ecossistema de uma ilha mediterrânea, ajudando animais e reunindo voluntários. O jogador explora um ambiente 3D para solucionar problemas ambientais e transformar o local em um paraíso ecológico.",
+        environmental: "O jogo valoriza o meio ambiente pela sua beleza e transmite a mensagem de que qualquer pessoa pode fazer a diferença. Ele reforça que mudar hábitos e ajudar a comunidade são atitudes poderosas.",
+        link: "https://www.atividadeseducativas.com.br/index.php?id=5361"
     },
     {
-        title: "Cyberpunk 2077",
-        rating: "8.5",
-        description: "Experience the future in Night City, an open-world metropolis obsessed with power, glamour, and body modification. Become a cyberpunk and write your own story.",
-        price: "$59.99",
-        downloads: "25M+",
-        genre: "Action RPG",
-        playtime: "100+ hrs",
-        trailer: "https://www.youtube.com/watch?v=8X2kIfS6fb8",
-        tags: ["Cyberpunk", "Open World", "FPS", "Story Rich"]
+        title: "Terra Nil",
+        description: "Um jogo de estratégia sobre transformar terras inférteis em ecossistemas equilibrados. O jogador deve purificar o solo, restaurar nascentes e depois remover qualquer vestígio de intervenção humana. A geração procedural cria paisagens únicas a cada partida.",
+        environmental: "O foco é completamente voltado à restauração ambiental, mostrando a importância da revitalização de rios, resurgimento de nascentes e recuperação de solos.",
+        trailer: "https://www.youtube.com/watch?v=F8eYqNNxICE",
+        link: "https://store.steampowered.com/app/1593030/Terra_Nil/"
+    },
+    {
+        title: ""
     }
 ];
 

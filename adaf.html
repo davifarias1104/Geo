@@ -3,11 +3,33 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Game Showcase</title>
+    <title>Recursos</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <!-- Carousel Section -->
+    <nav class="fixed top-0 left-0 right-0 z-50 bg-white/80 backdrop-blur-md border-b border-gray-200">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-16">
+        <a href="index.html" class="flex items-center gap-2 hover:opacity-80 transition-opacity">
+          <span class="text-3xl">🎮</span>
+          <span class="ml-2 font-semibold text-lg text-gray-900">
+            Jogos Ambientais
+          </span>
+        </a>
+        
+        <div class="flex items-center gap-6">
+          <a href="index.html" class="nav-link font-medium transition-colors hover:text-emerald-600 text-gray-700">
+            Início
+          </a>
+          <a href="adaf.html" class="nav-link active font-medium transition-colors hover:text-emerald-600 text-gray-700">
+            Exemplos
+          </a>
+        </div>
+      </div>
+    </div>
+  </nav>
     <div class="carousel-container">
         <div class="carousel">
             <div class="carousel-slide active">
@@ -27,11 +49,9 @@
             </div>
         </div>
 
-        <!-- Navigation Buttons -->
         <button class="carousel-btn prev" onclick="changeSlide(-1)">❮</button>
         <button class="carousel-btn next" onclick="changeSlide(1)">❯</button>
 
-        <!-- Dots Indicator -->
         <div class="carousel-dots">
             <span class="dot active" onclick="goToSlide(0)"></span>
             <span class="dot" onclick="goToSlide(1)"></span>
@@ -41,7 +61,6 @@
         </div>
     </div>
 
-    <!-- Dynamic Game Content Section -->
     <div class="content-section">
         <div class="game-header">
             <h1 id="game-title" class="game-title">Carregando...</h1>
@@ -52,6 +71,8 @@
         </div>
         <div>
         <p id="game-description" class="game-description">Carregando...</p>
+        <h1 id="environmental-title" class="environmental-title">Como aborda a questão ambiental?</h1>
+        <p id="game-environmental" class="game-environmental">Carregando...</p>
 
         <div class="game-stats-grid">
             <div class="stat-card">
@@ -80,8 +101,8 @@
         </div>
 
         <div class="game-actions">
-            <a href="#" id="trailer-link" class="btn btn-primary">🎬 Trailer</a>
-            <a href="#" id="game-link" class="btn btn-secondary">🛒 Jogar</a>
+            <a href="#" target="_blank" id="trailer-link" class="btn btn-primary">🎬 Trailer</a>
+            <a href="#" target="_blank" id="game-link" class="btn btn-secondary">🛒 Jogar</a>
         </div>
 
         <div class="game-tags" id="game-tags">

@@ -13,30 +13,61 @@ const gameData = [
         genre: "Test",
         playtime: "Test",
         trailer: "https://www.youtube.com/watch?v=MmB9b5njVbA",
-        link: "https://www.atividadeseducativas.com.br/index.php?id=5361",
+        game: "https://www.atividadeseducativas.com.br/index.php?id=5361",
         tags: ["Test", "Test", "Test", "Test"]
     },
     {
         title: "Imagine Earth",
+        rating: "Test",
         description: "Uma simulação de planeta em tempo real onde o jogador atua como gerente de colônias espaciais. É necessário explorar e povoar planetas distantes, equilibrando metas de lucro com preservação ambiental e condições de vida.",
         environmental: "O jogo demonstra os desafios de um desenvolvimento econômico sustentável e evidencia as vantagens de seguir esse caminho. Faz bom uso das mecânicas para ensinar sobre equilíbrio ecológico e gestão responsável.",
-        link: "https://www.atividadeseducativas.com.br/index.php?id=5361"
+        price: "Test",
+        downloads: "Test",
+        genre: "Test",
+        playtime: "Test",
+        trailer: "https://www.youtube.com/watch?v=MmB9b5njVbA",
+        game: "https://www.atividadeseducativas.com.br/index.php?id=5361",
+        tags: ["Test", "Test", "Test", "Test"]
     },
     {
         title: "Alba: A Wildlife Adventure",
+        rating: "Test",
         description: "A personagem Alba tenta preservar o ecossistema de uma ilha mediterrânea, ajudando animais e reunindo voluntários. O jogador explora um ambiente 3D para solucionar problemas ambientais e transformar o local em um paraíso ecológico.",
         environmental: "O jogo valoriza o meio ambiente pela sua beleza e transmite a mensagem de que qualquer pessoa pode fazer a diferença. Ele reforça que mudar hábitos e ajudar a comunidade são atitudes poderosas.",
-        link: "https://www.atividadeseducativas.com.br/index.php?id=5361"
+        price: "Test",
+        downloads: "Test",
+        genre: "Test",
+        playtime: "Test",
+        trailer: "https://www.youtube.com/watch?v=MmB9b5njVbA",
+        game: "https://www.atividadeseducativas.com.br/index.php?id=5361",
+        tags: ["Test", "Test", "Test", "Test"]
     },
     {
         title: "Terra Nil",
+        rating: "Test",
         description: "Um jogo de estratégia sobre transformar terras inférteis em ecossistemas equilibrados. O jogador deve purificar o solo, restaurar nascentes e depois remover qualquer vestígio de intervenção humana. A geração procedural cria paisagens únicas a cada partida.",
         environmental: "O foco é completamente voltado à restauração ambiental, mostrando a importância da revitalização de rios, resurgimento de nascentes e recuperação de solos.",
         trailer: "https://www.youtube.com/watch?v=F8eYqNNxICE",
-        link: "https://store.steampowered.com/app/1593030/Terra_Nil/"
+        price: "Test",
+        downloads: "Test",
+        genre: "Test",
+        playtime: "Test",
+        trailer: "https://www.youtube.com/watch?v=MmB9b5njVbA",
+        game: "https://store.steampowered.com/app/1593030/Terra_Nil/",
+        tags: ["Test", "Test", "Test", "Test"]
     },
     {
-        title: ""
+        title: "Cidade Verde",
+        rating: "Test",
+        description: "Esse jogo possui 4 modos (transporte saudável, poupando energia, reciclando em casa e poupando água), cada um com uma jogabilidade diferente envolvendo movimentação pelo teclado, cliques do mouse e microações variadas. Cada modo apresenta uma demonstração antes de começar para explicar o objetivo que deve ser realizado dentro de um limite de tempo.",
+        environmental: "O tema é explorado por meio de ações individuais como economia de água e energia, mostrando como pequenos hábitos ajudam a reduzir impactos ambientais. Ao final de cada modo, o jogo apresenta uma explicação sobre como aquela ação beneficia o meio ambiente.",
+        price: "Test",
+        downloads: "Test",
+        genre: "Test",
+        playtime: "Test",
+        trailer: "https://www.youtube.com/watch?v=MmB9b5njVbA",
+        game: "https://www.atividadeseducativas.com.br/index.php?id=5361",
+        tags: ["Test", "Test", "Test", "Test"]
     }
 ];
 

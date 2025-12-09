@@ -18,6 +18,7 @@ body {
     height: 920px;
     overflow: hidden;
     background-color: #000;
+    margin-top: 65px;
 }
 
 .carousel {
